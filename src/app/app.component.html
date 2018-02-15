@@ -8,7 +8,7 @@
       <input class="input_filter" type="text" [(ngModel)]="FilterText" placeholder="Search" (keyup)="Filter()">
       <ng-container *ngFor="let girl of girls" class="container_element">
         <a href="#" (click)="SetCurrGirl(girl)">
-          <img src={{girl.photo}} alt="{{girl.name}}" class="photo-thumbnail">
+          <img src={{girl.photo}} alt="{{girl.name}}" class="photo-thumbnail" onError="this.src='assets/pictures/error.jpg'">
           <span [innerHtml]="girl.name"></span>
           <br>
         </a>
@@ -19,7 +19,7 @@
     <div class="inner_content" *ngIf="currGirl">
         <h1 class="inner_content_header">{{currGirl.name}}</h1><br>
         <p style="display: inline-block;">Instagram link: <a href="{{currGirl.instagramUrl}}" target="_blank" class="insta_link">{{currGirl.instagramUrl}}</a></p><br>
-        <img [src]="currGirl.photo" [alt]="currGirl.name" (click)="sidenav.toggle()" style="width: 70vh; min-height: 10vh;">    
+        <img [src]="currGirl.photo" [alt]="currGirl.name" (click)="sidenav.toggle()" style="width: 70vh; min-height: 10vh;" onError="this.src='assets/pictures/error.jpg'">    
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
