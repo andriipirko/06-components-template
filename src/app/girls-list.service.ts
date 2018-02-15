@@ -29,7 +29,7 @@ export class GirlsListService {
       "name": "_kinga_cz",
       "instagramUrl": "https://www.instagram.com/_kinga_cz/",
       "country": "Poland",
-      "photo": "assets/pictures/_kinga_cz.jpg"
+      "photo": "assets/pictures/kinga_cz.jpg"
     },
     {
       "name": "pershinatany",
