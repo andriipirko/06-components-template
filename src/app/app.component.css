@@ -1,0 +1,50 @@
+.photo-thumbnail {
+    border-radius: 30px;
+    border: 1px solid #ddd;
+    display: inline-block;
+    margin: 4px 16px; 
+    vertical-align: middle;
+    width: 48px;
+    height: 48px;
+}
+
+.sidenav {
+    width: 250px;
+    max-height: 92vh;
+    overflow-y: auto;
+}
+
+.container_element {
+    display: block;
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+
+.content {
+    height: 92vh;
+    width: 100vw;
+}
+
+.inner_content {
+    width: 80vw;
+    margin: 0 auto;
+    padding: 10px 40px;
+}
+
+.insta_link {
+    color: white;
+    text-decoration: none;
+}
+
+.inner_content_header {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.input_filter {
+    background-color: #636363;
+    border-radius: 10px;
+    border: none;
+    margin: 10px 30px;
+    color: white;
+    padding: 1px 10px;
+}
