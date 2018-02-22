@@ -1,0 +1,22 @@
+<div class="modal" *ngIf="show">
+  <div class="modal_body">
+    <div class="inner_body">
+      <h1 style="text-align: center;">Enter the data to enter into the database:</h1>
+      <div class="inputs">
+        <div class="table">
+          <div class="table_left_element">Name:</div>
+          <div><input type="text" [(ngModel)]="newGirl.name"></div>
+          <div class="table_left_element">Instagram Url:</div>
+          <div><input type="text" [(ngModel)]="newGirl.instagramUrl"></div>
+          <div class="table_left_element">Country:</div>
+          <div><input type="text" [(ngModel)]="newGirl.country"></div>
+          <div class="table_left_element">Avatar Url:</div>
+          <div><input type="text" [(ngModel)]="newGirl.photo"></div>
+          <div class="decline table_left_element" (click)="show = false;">Decline</div>
+          <div class="accept" (click)="CreateGirl();">Create</div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>

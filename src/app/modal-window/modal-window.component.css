@@ -1,0 +1,68 @@
+.modal {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.modal_body {
+    position: fixed;
+    width: 700px;
+    height: 400px;
+    left: 50%;
+    top: 50%;
+    margin-left: -350px;
+    margin-top: -200px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 100px #000;
+}
+
+.inner_body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    color: #000;
+}
+
+.table {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+}
+
+.table_left_element {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.accept {
+    display: inline-block;
+    background: #0a0;
+    padding: 5px 10px;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.accept:hover {
+    background: #0c0;
+}
+
+.accept:active {
+    background: #0f0;
+}
+
+.decline {
+    background: #a00;
+    padding: 5px 10px;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.decline:hover {
+    background: #c00;
+}
+
+.decline:active {
+    background: #f00;
+}

@@ -7,7 +7,8 @@ import { GirlsListService } from './girls-list.service'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [ GirlsListService ]
 })
 export class AppComponent {
   title = 'app';
@@ -15,9 +16,10 @@ export class AppComponent {
   favouriteSeason: string;
   girls: Girl[] = null;
   currGirl: Girl;
+  showModalWindow: boolean = false;
 
   constructor(private girlsService: GirlsListService) { 
-    this.girls = girlsService.GirlsList;
+    this.girls = girlsService.GirlList;
   }
 
   SetCurrGirl(girl: Girl) {
@@ -25,7 +27,7 @@ export class AppComponent {
   }
 
   Filter() {
-    this.girls = this.girlsService.GirlsList.filter(p => p.name.includes(this.FilterText));
+    this.girls = this.girlsService.GirlList.filter(p => p.name.includes(this.FilterText));
   }
 
   

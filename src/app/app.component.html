@@ -1,25 +1,30 @@
-<mat-toolbar color="primary" class="toolbar">
-  <button mat-icon-button (click)="sidenav.toggle();"><mat-icon>menu</mat-icon></button>
-  <h1 class="app-name">Pretty Girls</h1>
-</mat-toolbar>
-<mat-sidenav-container>
-  <mat-sidenav #sidenav mode='side' class="sidenav" opened='true'>
-    <mat-nav-list>
-      <input class="input_filter" type="text" [(ngModel)]="FilterText" placeholder="Search" (keyup)="Filter()">
-      <ng-container *ngFor="let girl of girls" class="container_element">
-        <a href="#" (click)="SetCurrGirl(girl)">
-          <img src={{girl.photo}} alt="{{girl.name}}" class="photo-thumbnail" onError="this.src='assets/pictures/error.jpg'">
-          <span [innerHtml]="girl.name"></span>
-          <br>
-        </a>
-      </ng-container>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content class="content">
-    <div class="inner_content" *ngIf="currGirl">
-        <h1 class="inner_content_header">{{currGirl.name}}</h1><br>
-        <p style="display: inline-block;">Instagram link: <a href="{{currGirl.instagramUrl}}" target="_blank" class="insta_link">{{currGirl.instagramUrl}}</a></p><br>
-        <img [src]="currGirl.photo" [alt]="currGirl.name" (click)="sidenav.toggle()" style="width: 70vh; min-height: 10vh;" onError="this.src='assets/pictures/error.jpg'">    
-    </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<div class="main_part">
+  <mat-toolbar color="primary" class="toolbar">
+    <button mat-icon-button (click)="sidenav.toggle();"><mat-icon>menu</mat-icon></button>
+    <h1 class="app-name">Pretty Girls</h1>
+    <div class="but_add" (click)="sidenav.close(); showModalWindow = true;">Add new</div>
+  </mat-toolbar>
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav mode='side' class="sidenav" opened='true'>
+      <mat-nav-list>
+        <input class="input_filter" type="text" [(ngModel)]="FilterText" placeholder="Search" (keyup)="Filter()"><br>
+        <ng-container *ngFor="let girl of this.girlsService.GirlList" class="container_element">
+          <a href="#" (click)="SetCurrGirl(girl)">
+            <img src={{girl.photo}} alt="{{girl.name}}" class="photo-thumbnail" onError="this.src='assets/pictures/error.jpg'">
+            <span [innerHtml]="girl.name"></span>
+            <br>
+          </a>
+        </ng-container>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="content">
+      <div class="inner_content" *ngIf="currGirl">
+          <h1 class="inner_content_header">{{currGirl.name}}</h1><br>
+          <p style="display: inline-block;">Instagram link: <a href="{{currGirl.instagramUrl}}" target="_blank" class="insta_link">{{currGirl.instagramUrl}}</a></p><br>
+          <img [src]="currGirl.photo" [alt]="currGirl.name" (click)="sidenav.toggle()" style="width: 70vh; min-height: 10vh;" onError="this.src='assets/pictures/error.jpg'">    
+      </div>
+      <app-modal-window *ngIf="showModalWindow"></app-modal-window>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+

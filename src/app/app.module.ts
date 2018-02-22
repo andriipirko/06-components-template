@@ -1,17 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material/material.module'
 import { GirlsListService } from './girls-list.service';
+import { ModalWindowComponent } from './modal-window/modal-window.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ModalWindowComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +21,7 @@ import { GirlsListService } from './girls-list.service';
     BrowserAnimationsModule,
     NoopAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpModule
   ],
   providers: [
     GirlsListService
