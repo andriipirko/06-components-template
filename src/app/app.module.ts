@@ -3,6 +3,7 @@ import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material/material.module'
@@ -21,7 +22,8 @@ import { ModalWindowComponent } from './modal-window/modal-window.component';
     BrowserAnimationsModule,
     NoopAnimationsModule,
     MaterialModule,
-    HttpModule
+    HttpModule,
+    HttpClientModule
   ],
   providers: [
     GirlsListService

@@ -13,7 +13,7 @@
           <div class="table_left_element">Avatar Url:</div>
           <div><input type="text" [(ngModel)]="newGirl.photo"></div>
           <div class="decline table_left_element" (click)="show = false;">Decline</div>
-          <div class="accept" (click)="CreateGirl();">Create</div>
+          <div class="accept" (click)="this.girlListService.postGirl(this.newGirl);">Create</div>
         </div>
         
       </div>
